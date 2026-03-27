@@ -1,22 +1,18 @@
 import smtplib
 
-def sendEmail():
+def send_email(user_name, password, recipient_email):
     host = "smtp.gmail.com"
     port = 587
 
     server = smtplib.SMTP(host, port)
     server.starttls()   #initiate TLS mode from gmail server
 
-    user_name = "user_name"
-    password = "password"
-
     server.login(user_name, password)
 
-    from_email = "sender_email"
-    to_email = "recipient_email"
+    from_email = user_name
     message = "Testing automating email!"
 
-    server.sendmail(from_email, to_email, message)
+    server.sendmail(from_email, recipient_email, message)
 
     server.close()
 
