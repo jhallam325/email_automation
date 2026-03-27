@@ -5,7 +5,7 @@ def sendEmail():
     port = 587
 
     server = smtplib.SMTP(host, port)
-    server.starttls()   #initiate connection to gmail server
+    server.starttls()   #initiate TLS mode from gmail server
 
     user_name = "user_name"
     password = "password"
